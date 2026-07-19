@@ -1,0 +1,5 @@
+upgrade_flag,downgrade_flag,subscriptions,churned,churn_rate_pct
+False,False,4276,419.0,9.8
+False,True,195,21.0,10.8
+True,False,506,42.0,8.3
+True,True,23,4.0,17.4

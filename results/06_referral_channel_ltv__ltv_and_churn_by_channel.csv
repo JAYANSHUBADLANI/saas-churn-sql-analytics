@@ -1,0 +1,6 @@
+referral_source,accounts,avg_revenue_per_account,total_revenue,churned_accounts,churn_rate_pct
+ads,98,118407.0,11603871.0,23.0,23.5
+partner,89,114844.0,10221137.0,13.0,14.6
+organic,114,113661.0,12957389.0,20.0,17.5
+other,103,102859.0,10594457.0,25.0,24.3
+event,96,93110.0,8938537.0,29.0,30.2

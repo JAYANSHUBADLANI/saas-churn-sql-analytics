@@ -1,0 +1,3 @@
+churn_flag,accounts,avg_tickets_per_account,avg_resolution_hours,avg_satisfaction_score,avg_first_response_min,avg_escalations_per_account
+False,390,4.02,36.5,3.95,89.6,0.18
+True,110,3.93,35.5,4.0,84.9,0.22
