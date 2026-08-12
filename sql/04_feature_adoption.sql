@@ -17,7 +17,7 @@ SELECT
     RANK() OVER (ORDER BY SUM(usage_count) DESC) AS usage_rank
 FROM feature_usage
 GROUP BY feature_name
-ORDER BY usage_rank;
+ORDER BY usage_rank, feature_name;
 
 -- >>> top_features_by_segment_quarter
 WITH usage_joined AS (
@@ -50,4 +50,4 @@ ranked AS (
 SELECT industry, plan_tier, quarter, feature_name, total_usage, feature_rank
 FROM ranked
 WHERE feature_rank <= 3
-ORDER BY industry, plan_tier, quarter, feature_rank;
+ORDER BY industry, plan_tier, quarter, feature_rank, feature_name;

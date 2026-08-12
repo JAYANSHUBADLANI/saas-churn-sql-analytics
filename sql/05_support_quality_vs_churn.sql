@@ -29,7 +29,8 @@ SELECT
     ROUND(AVG(avg_first_response_min), 1) AS avg_first_response_min,
     ROUND(AVG(escalations), 2) AS avg_escalations_per_account
 FROM acct_tickets
-GROUP BY churn_flag;
+GROUP BY churn_flag
+ORDER BY churn_flag;
 
 -- >>> churn_rate_by_ticket_count_bucket
 WITH acct_tickets AS (

@@ -51,10 +51,11 @@ SELECT
     monetary,
     recency_days,
     frequency,
-    NTILE(5) OVER (ORDER BY recency_days DESC) AS recency_score,
-    NTILE(5) OVER (ORDER BY frequency ASC) AS frequency_score,
-    NTILE(5) OVER (ORDER BY monetary ASC) AS monetary_score
-FROM rfm_base;
+    NTILE(5) OVER (ORDER BY recency_days DESC, account_id) AS recency_score,
+    NTILE(5) OVER (ORDER BY frequency ASC, account_id) AS frequency_score,
+    NTILE(5) OVER (ORDER BY monetary ASC, account_id) AS monetary_score
+FROM rfm_base
+ORDER BY account_id;
 
 -- >>> high_value_at_risk_accounts
 WITH latest_sub AS (
@@ -90,9 +91,9 @@ rfm_base AS (
 scored AS (
     SELECT
         *,
-        NTILE(5) OVER (ORDER BY recency_days DESC) AS recency_score,
-        NTILE(5) OVER (ORDER BY frequency ASC) AS frequency_score,
-        NTILE(5) OVER (ORDER BY monetary ASC) AS monetary_score
+        NTILE(5) OVER (ORDER BY recency_days DESC, account_id) AS recency_score,
+        NTILE(5) OVER (ORDER BY frequency ASC, account_id) AS frequency_score,
+        NTILE(5) OVER (ORDER BY monetary ASC, account_id) AS monetary_score
     FROM rfm_base
 )
 SELECT
